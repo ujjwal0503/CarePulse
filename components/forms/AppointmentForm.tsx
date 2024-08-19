@@ -100,7 +100,8 @@ export const AppointmentForm = ({
             status: status as Status,
             cancellationReason: values.cancellationReason,
           },
-          type,
+          type: "schedule",
+          timeZone: "IST"
         };
 
         const updatedAppointment = await updateAppointment(appointmentToUpdate);
@@ -120,12 +121,12 @@ export const AppointmentForm = ({
   switch (type) {
     case "cancel":
       buttonLabel = "Cancel Appointment";
-      break; 
+      break;
     case "schedule":
       buttonLabel = "Schedule Appointment";
       break;
     default:
-      buttonLabel = "Submit Appointment";
+      buttonLabel = "Submit Apppointment";
   }
 
   return (
